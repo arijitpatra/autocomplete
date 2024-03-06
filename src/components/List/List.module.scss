@@ -1,0 +1,8 @@
+.listItem {
+  padding: 0.5rem 1.5rem;
+
+  &:hover {
+    background: var(--gray);
+    cursor: pointer;
+  }
+}

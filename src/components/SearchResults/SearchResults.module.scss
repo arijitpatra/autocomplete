@@ -1,0 +1,15 @@
+.searchResultPanel {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 1px solid;
+  border-radius: var(--borderRadius);
+  margin: 0;
+  padding: 1rem 0;
+  background: var(--white);
+  text-align: left;
+}
+
+.noResults {
+  padding: 0.5rem 1.5rem;
+}

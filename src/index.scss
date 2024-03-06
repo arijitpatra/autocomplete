@@ -1,0 +1,19 @@
+:root {
+  --gray: #efefef;
+  --white: #ffffff;
+  --borderRadius: 5px;
+  --charcoal: #313131;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, system-ui,
+    Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--charcoal);
+  background-color: var(--charcoal);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
