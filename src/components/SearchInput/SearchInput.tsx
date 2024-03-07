@@ -20,8 +20,9 @@ const SearchInput = ({
     <div className={`${styles.wrapper}`}>
       🔍
       <input
+        type="search"
         className={`${styles.searchInput}`}
-        type="text"
+        autoComplete="off"
         value={value}
         onChange={onSearchInputChange}
         onBlur={onSearchInputBlur}

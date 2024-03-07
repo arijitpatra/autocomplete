@@ -1,40 +1,52 @@
 import { ChangeEventHandler, FocusEventHandler } from "react";
 import SearchInput from "../SearchInput";
-import SearchResults from "../SearchResults";
+import SearchSuggestions from "../SearchSuggestions";
 
 interface AutoCompleteProps {
-  onSearchInputChange: ChangeEventHandler<HTMLInputElement>;
-  onSearchInputBlur: FocusEventHandler<HTMLInputElement>;
-  onSearchInputFocus: FocusEventHandler<HTMLInputElement>;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur: FocusEventHandler<HTMLInputElement>;
+  onFocus: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  results: any;
+  suggestions: string[];
   searchText: string;
   isLoading: boolean;
+  onSuggestionClicked: (value: string) => void;
+  hideSuggestions: boolean;
 }
 
 const AutoComplete = ({
-  onSearchInputBlur,
-  onSearchInputChange,
-  onSearchInputFocus,
+  onBlur,
+  onChange,
+  onFocus,
   placeholder,
-  results,
+  suggestions,
   searchText,
   isLoading,
+  onSuggestionClicked,
+  hideSuggestions,
 }: AutoCompleteProps) => {
+  const handleSuggestionClicked = (value: string) => onSuggestionClicked(value);
+
+  /* 
+  memoization hooks from ReactJS can be used to prevent the child components from re-rendering, 
+  but since React suggests to use them only when really needed because generally it handles re-renders well and 
+  optimizations should be done when there is a need, didn't use them here at the the moment, could be potential improvements
+  */
   return (
     <>
       <SearchInput
         value={searchText}
-        onSearchInputChange={onSearchInputChange}
-        onSearchInputBlur={onSearchInputBlur}
-        onSearchInputFocus={onSearchInputFocus}
+        onSearchInputChange={onChange}
+        onSearchInputBlur={onBlur}
+        onSearchInputFocus={onFocus}
         placeholder={placeholder}
       />
-      <SearchResults
-        data={results}
+      <SearchSuggestions
+        data={suggestions}
         searchText={searchText}
         isLoading={isLoading}
+        onSuggestionClicked={handleSuggestionClicked}
+        hideSuggestions={hideSuggestions}
       />
     </>
   );
