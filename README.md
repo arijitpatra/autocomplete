@@ -1,13 +1,28 @@
-# React + TypeScript + Vite
+# autocomplete
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements an auto complete.
 
-Currently, two official plugins are available:
+![screenshot](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Made using ReactJS, ViteJS, TypeScript, CSS modules, Vitest, Testing Library React, Cypress.
 
-## Expanding the ESLint configuration
+## Installation
+
+Run `npm install`
+
+## Running the app
+
+Run `npm run dev`, open localhost (check the port number in the terminal) in your browser! 🚀
+
+## Running unit tests
+
+Run `npm run test`
+
+## Running e2e tests
+
+Run `npm run cypress:open`
+
+## Expanding the ESLint configuration (optional)
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
@@ -17,12 +32,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`

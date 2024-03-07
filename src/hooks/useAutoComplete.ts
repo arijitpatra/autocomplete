@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { ALL_COUNTRIES_ENDPOINT } from "./../constants";
 import { debounce, filterDataAsync } from "./../utils";
 
@@ -33,7 +33,7 @@ export const useAutoComplete = () => {
     []
   );
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const trimmedValue = value.trim();
 
